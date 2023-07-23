@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "name":"Masterkay",
+        "numReview":"13 reviews",
+        "price": 20.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/MasterkeyHold.jpg?v=1669752914"
+    },
+    {
+        "id": 2,
+        "name":"M203 Gren Launcher",
+        "numReview":"114 reviews",
+        "price": 20.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/GrenadeLauncher.jpg?v=1595438990"
+    },
+    {
+        "id": 3,
+        "name":"Mini 4x Scope",
+        "numReview":"325 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/ACOG_41c77084-6df8-44c7-9b8a-2fabf0862eb7.jpg?v=1626210423"
+    },
+    {
+        "id": 4,
+        "name":"Holo Sight",
+        "numReview":"64 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/Red_Dot_0977470c-8503-4e6a-9673-03151022ed85.jpg?v=1626210317"
+    },
+    {
+        "id": 5,
+        "name":"Short Holo Sight",
+        "numReview":"17 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/ShortHolo.jpg?v=1614893430"
+    },
+    {
+        "id": 6,
+        "name":"Reflex Sight",
+        "numReview":"6 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/HoldingaminatureRefelxSightGoatgunattachment.jpg?v=1629318217"
+    },
+    {
+        "id": 7,
+        "name":"Mini Red Dot",
+        "numReview":"10 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/RedDotHold.jpg?v=1629318699"
+    },
+    {
+        "id": 8,
+        "name":"Tac Scope",
+        "numReview":"17 reviews",
+        "price": 8.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/Tac-Scope.jpg?v=1629317803"
+    },
+    {
+        "id": 9,
+        "name":"Mini Tac Light",
+        "numReview":"23 reviews",
+        "price": 15.00,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/FlashHand.jpg?v=1651706628"
+    },
+    {
+        "id": 10,
+        "name":"AR15 Model - Black",
+        "numReview":"1806 reviews",
+        "price": 39.99,
+        "imageURL": "https://www.goatguns.com/cdn/shop/files/MiniatureAR15Goatgunsmodel.jpg?v=1686252729"
+    },
+    {
+        "id": 11,
+        "name":"Limited SIG MCX® Model",
+        "numReview":"3 reviews",
+        "price": 59.99,
+        "imageURL": "https://www.goatguns.com/cdn/shop/files/MCXLimitedEdition.jpg?v=1686254371"
+    },
+    {
+        "id": 12,
+        "name":"AK47 Model - Black",
+        "numReview":"519 reviews",
+        "price": 39.99,
+        "imageURL": "https://www.goatguns.com/cdn/shop/products/AKBlacktoymodelbyrope.jpg?v=1681406751"
+    }
+    
+]
