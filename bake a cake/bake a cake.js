@@ -32,8 +32,8 @@ function getInput(question) {
 
 async function inputInfor() {
   console.log("Thông tin người nhận bánh:");
-  name = await getInput("Tên: ? ");
-  age = parseInt(await getInput("Tuổi: ? "));
+  name = await getInput("Tên: ");
+  age = parseInt(await getInput("Tuổi: "));
 
   if (name != "" && age > 0) {
     console.log("Thành công \n");
@@ -44,11 +44,11 @@ async function inputInfor() {
 }
 
 async function negotiation() {
-  console.log("Xin tiền mẹ mua bánh: ");
-  moneyGotten = parseInt(await getInput("Số tiền: ? "));
+  console.log("Xin tiền mẹ mua bánh!");
+  moneyGotten = parseInt(await getInput("Số tiền nhận được: "));
 
   if (moneyGotten >= 0) {
-    console.log("xin thành công số tiền: " + moneyGotten + "\n");
+    console.log("\nxin thành công số tiền: " + moneyGotten + "\n");
     if (moneyGotten > sizePrice[2]) {
       chosenCakeSize = "L";
       chosenCakePrice = sizePrice[2];
@@ -64,43 +64,39 @@ async function negotiation() {
       chosenCakePrice = sizePrice[0];
       console.log("Thương lượng cũng thành công, có thể chọn size: " + chosenCakeSize + "\n");
     } else {
-      console.log("Kèo này hỏng rồi!!!!!! \n");
-      console.log("Sủiiiiiiiiiiii");
-      process.exit(1);
+      console.log("Không đủ tiền!!!\nKèo này hỏng rồi!!!!!! \n");
+      console.log("Chả lại cho mẹ: ", moneyGotten);
+      console.log("\nSủiiiiiiiiiiii\n");
+      process.exit(1); //cái này làm gì ?
     }
   } else {
-    console.log("Thất bại \n");
-    console.log("Sủiiiiiiiiiiii");
+    console.log("Mẹ không chịu cho tiền!?!?!?!?!?!? \n");
+    console.log("Sủiiiiiiiiiiii\n");
     process.exit(1);
   }
+  console.log("____________________________");
 }
 
 
 async function doGrocery() {
     console.log("Đi nào, tầm này thì chắc 10 phút là xong");
     await wait(10);
-    for(let i = 0; i < wait(10); i++){
-        process.stdout.write("Còn"+parseInt(4-i)+"s nữa thôi\n");
-    }
     console.log("Ok, đã xong, giờ thêm 2 phút để về");
     await wait(2);
-    for(let i = 0; i < wait(2); i++){
-        process.stdout.write("Còn"+parseInt(4-i)+"s nữa thôi\n");
-    }
-    console.log("Về nhà rồi nè mẹ!!!!!!!!!!");
+    console.log("Con đã về zồi đây!!!!!!!!!!\n____________________________");
 
   }
 
 async function cook() {
     async function prepare() {
         return new Promise(async (resolve, reject) => {
-            console.log("Sơ chế nguyên liệu.\n==================");
-            console.log("\n1.Tách trứng.\n2.Ray bột.\n3.Chuẩn bị gia vị.");
+            console.log("Sơ chế nguyên liệu.\n");
+            console.log("1.Tách trứng.\n2.Ray bột.\n3.Chuẩn bị gia vị.");
             await wait(4);
             for(let i = 0; i < wait(4); i++){
                 process.stdout.write("Còn"+parseInt(4-i)+"s nữa thôi\n");
             }
-            console.log("Vậy là chuẩn bị xong!!!!\n");
+            console.log("Vậy là chuẩn bị xong!!!!\n____________________________");
             resolve();
         });
     }
@@ -112,6 +108,8 @@ async function cook() {
             console.log("Đánh kem.");
             await wait(5);
             console.log("OK! Giờ nướng bánh.\n");
+            console.log("-----------------------------");
+
             resolve();
         });
     }
@@ -125,6 +123,7 @@ async function cook() {
           console.log("Nướng bánh");
           await wait(5);
           console.log("Trang trí nữa thôi là xong\n");
+          console.log("-----------------------------");
           resolve();
         });
     }
@@ -142,27 +141,23 @@ async function decorate() {
     await wait(3);
     console.log("Viết tên lên bánh.");
     await wait(3);
-    console.log("Và hoàn thành cái bánh!!! \n----------------------------");
+    console.log("Và hoàn thành cái bánh!!! ____________________________");
   }
 
 async function consume() {
-    console.log("Mình không có quất cái bánh được, tại vì nó không có hư. Nên là mình ĂN nó.");
+    console.log("\nMình không có quất cái bánh được, tại vì nó không có hư. Nên là mình ĂN nó.\n");
     await wait(1);
     console.log("============================-END-============================");
-    let tienThua = moneyGotten - chosenCakePrice;
-    console.log("Nãy mẹ cho: ",moneyGotten);
+    let change = moneyGotten - chosenCakePrice;
+    console.log("\nNãy mẹ cho mình: ",moneyGotten);
     console.log("Mà cái bánh thì có: ",chosenCakePrice);
-    console.log(`Vậy trả mẹ tiền thừa: ${tienThua}`);
+    console.log(`Vậy trả mẹ tiền thừa: ${change}\n\n`);
 }
 
 
 async function main() {
-    await inputInfor()
-    .then(async (value) => {
-      console.log(value);
-      await negotiation()
-        .then(async (value) => {
-        console.log(value);
+    await inputInfor().then(async () => {
+      await negotiation().then(async () => {
         console.log(
             `============================\n
             Giờ mình làm bánh cho: ${name}, 
@@ -173,20 +168,11 @@ async function main() {
           );
 
       })
-      .catch((value) => {
-        console.log(value);
-        console.log("Nghèo");
-        rl.close();
-      });
       await doGrocery();
       await cook();
       await decorate();
       await consume();
     })
-    .catch((value) => {
-      console.log(value);
-    });
-    
   };
   
   main();
